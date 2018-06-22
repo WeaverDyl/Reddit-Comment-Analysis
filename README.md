@@ -10,7 +10,7 @@ My data (the data provided in this repo) consists of 10,000 comments collected f
 These are my results. It's worth noting that these results are definitely not super scientific or anything. This was purely just a learning experience.
 
 ## Setup
-The only outside libraries you'll need to run this project yourself are [PRAW](https://praw.readthedocs.io/en/latest/), and [Matplotlib](https://matplotlib.org/). Both are available via PIP.
+The only outside libraries you'll need to run this project yourself are [PRAW](https://praw.readthedocs.io/en/latest/), and [Matplotlib](https://matplotlib.org/). Both are available via pip.
 
 Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py`.
 
