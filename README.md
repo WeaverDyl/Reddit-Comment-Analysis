@@ -9,15 +9,30 @@ My data (the data provided in this repo) consists of 10,000 comments collected f
 
 These are my results. It's worth noting that these results are definitely not super scientific or anything. This was purely just a learning experience.
 
+In the future, I'd like to do a longer experiment, perhaps a week or two between collecting initial and final data. Both of the trials I ran with this lasted 24 hours, and it limited some of the results more than I expected.
+
 ## Setup
-The only outside libraries you'll need to run this project yourself are [PRAW](https://praw.readthedocs.io/en/latest/), and [Matplotlib](https://matplotlib.org/). Both are available via PIP.
+The only outside libraries you'll need to run this project yourself are [PRAW](https://praw.readthedocs.io/en/latest/), and [Matplotlib](https://matplotlib.org/). Both are available via pip.
 
 Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py`.
+
+Make sure that if you run `bot.py` more than once, that you have copied the original files in some way, because `initial.csv` and `final.csv` will be overwritten upon any runs after the initial.
 
 ## Findings
 
 ### Initial Data
-More to come soon
+The full results are available in [results.txt](data/monday-tuesday/results.txt), but I will go over the basics here.
+
+Relatively unsurprisingly, of the 10,000 comments I collected, the most, 517, in fact, came from [r/AskReddit](https://www.reddit.com/r/AskReddit/). See the chart below to see other top subreddits from my data.
+![image](https://i.imgur.com/7SkM2Ep.png)
+
+Overall, I collected comments from a staggering 2795 subreddits.
+
+There were many interesting stats from the accounts that made the comments as well. The average account from the comments I collected was made on September 15th, 2015. The oldest account I collected was made on September 19th, 2005 (oddly similar dates compared with the average). The average account had 153 total karma.
+
+In total, there were 401 deleted or removed comments. After 24 hours, the average comment had just over 8 upvotes, and the average number of replies was just over 0.5.
+
+Again, to see more complete data, check the [results.txt](data/monday-tuesday/results.txt) file.
 
 ### Final Data
 More to come soon
