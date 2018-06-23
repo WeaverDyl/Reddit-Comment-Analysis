@@ -14,9 +14,13 @@ In the future, I'd like to do a longer experiment, perhaps a week or two between
 ## Setup
 The only outside libraries you'll need to run this project yourself are [PRAW](https://praw.readthedocs.io/en/latest/), and [Matplotlib](https://matplotlib.org/). Both are available via pip.
 
-Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py`.
+Then you need to setup a script application on Reddit, and enter the login information in the `config.py` file. See instructions [here](https://praw.readthedocs.io/en/latest/getting_started/authentication.html). 
 
-Make sure that if you run `bot.py` more than once, that you have copied the original files in some way, because `initial.csv` and `final.csv` will be overwritten upon any runs after the initial.
+At the top of `bot.py`, add the relative path to your initial file and final file locations. `bot.py` should then run without issue.
+
+At the bottom of `data.py`, in `main`, add the relative path to your initial file and final file locations. `data.py` should then run without issue.
+
+Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py` with the `run_initial(r)` method uncommented, and the `run_final(r)` method commented out. Once you have your data, run `bot.py` again with `run_initial(r)` commented out and `run_final(r)` uncommented. These method calls are made in `main`.
 
 ## Findings
 
@@ -31,6 +35,8 @@ Overall, I collected comments from a staggering 2795 subreddits.
 There were many interesting stats from the accounts that made the comments as well. The average account from the comments I collected was made on September 15th, 2015. The oldest account I collected was made on September 19th, 2005 (oddly similar dates compared with the average). The average account had 153 total karma.
 
 In total, there were 401 deleted or removed comments. After 24 hours, the average comment had just over 8 upvotes, and the average number of replies was just over 0.5.
+
+![image](https://i.imgur.com/p5cRaiA.png)
 
 Again, to see more complete data, check the [results.txt](data/monday-tuesday/results.txt) file.
 

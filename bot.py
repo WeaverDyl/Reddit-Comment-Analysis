@@ -4,9 +4,9 @@ import time
 import codecs
 import re
 
-initial_file = open('data/initial.csv', 'a+', encoding='utf-8') # Where to store initial comment info
+initial_file = open('', 'a+', encoding='utf-8') # Where to store initial comment info
 initial_file.seek(0) # Move file pointer to beginning
-final_file = open('data/final.csv', 'a+', encoding='utf-8') # Where to store final comment info
+final_file = open('', 'a+', encoding='utf-8') # Where to store final comment info
 final_file.seek(0) # Move file pointer to beginning
 
 comment_num = 1 # Used to represent the current comment being looked at (for run_initial)
@@ -100,4 +100,5 @@ def run_final(r):
 
 if __name__ == "__main__":
     r = login()
-    run_initial(r) # Change to run_final if getting final data
+    #run_initial(r) # Comment out if getting final data
+    run_final(r) # Comment out if getting initial data
