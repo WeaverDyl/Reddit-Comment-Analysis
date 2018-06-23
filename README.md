@@ -18,7 +18,7 @@ Then you need to setup a script application on Reddit, and enter the login infor
 
 At the top of `bot.py`, add the relative path to your initial file and final file locations. `bot.py` should then run without issue.
 
-At the bottom of `data.py`, in `main`, add the relative path to your initial file and final file locations. `data.py` should then run without issue.
+In the middle of `data.py`, at the top of the `print_data_to_file` method, add a location where you would like some statistics printed. Then, at the bottom of `data.py`, in `main`, add the relative path to your initial file and final file locations. `data.py` should then run without issue.
 
 Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py` with the `run_initial(r)` method uncommented, and the `run_final(r)` method commented out. Once you have your data, run `bot.py` again with `run_initial(r)` commented out and `run_final(r)` uncommented. These method calls are made in `main`.
 

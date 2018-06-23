@@ -226,7 +226,7 @@ def deleted_comments_data(arr_initial, arr_final):
 
 def print_data_to_file(arr_initial, arr_final):
     """ """
-    results_file = open('data/results.txt', 'w')
+    results_file = open('', 'w')
     
     # Returns sorted dictionaries of format ('subreddit' : num comments)
     subreddit_stats = subreddit_data(arr_initial)
