@@ -1,7 +1,7 @@
 # Reddit Comment Analysis
 
 ## About
-This was much more of a curiosity project than anything else. I wanted to learn some more Python, as I haven't used the language for much in the past. I figured Python is the perfect language to write a Reddit bot in (because of [PRAW](https://praw.readthedocs.io/en/latest/), of course. I didn't want to make a bot that replies to comments (those are super annoying and overdone at this point), so I had to think of something else. I settled on a data collection bot that I can use to compile statistics based on comment patterns. It's not complicated, but I made it in hoped that the results would be interesting.
+This was much more of a curiosity project than anything else. I wanted to learn some more Python, as I haven't used the language for much in the past. I figured Python is the perfect language to write a Reddit bot in (because of [PRAW](https://praw.readthedocs.io/en/latest/), of course. I didn't want to make a bot that replies to comments (those are super annoying and overdone at this point), so I had to think of something else. I settled on a data collection bot that I can use to compile statistics based on comment patterns. It's not complicated (code-wise), but I made it in hoped that the results would be interesting.
 
 My idea was to collect a bunch of Reddit comments on one day of the week, and then to collect any changes to those comments a day later (account karma gains, how many comments were deleted, etc...) and then collect a different set of comment data on a different day of the week and then repeat the process.
 
@@ -25,7 +25,7 @@ Once those are setup, you're ready to collect data. You can set the subreddit as
 ## Findings
 
 ### Initial Data
-The full results are available in [results.txt](data/monday-tuesday/results.txt), but I will go over the basics here.
+The full results are available in [`data/monday-tuesday/results.txt`](data/monday-tuesday/results.txt), but I will go over the basics here.
 
 Relatively unsurprisingly, of the 10,000 comments I collected, the most, 517, in fact, came from [r/AskReddit](https://www.reddit.com/r/AskReddit/). See the chart below to see other top subreddits from my data.
 ![image](https://i.imgur.com/7SkM2Ep.png)
@@ -34,14 +34,25 @@ Overall, I collected comments from a staggering 2795 subreddits.
 
 There were many interesting stats from the accounts that made the comments as well. The average account from the comments I collected was made on September 15th, 2015. The oldest account I collected was made on September 19th, 2005 (oddly similar dates compared with the average). The average account had 153 total karma.
 
-In total, there were 401 deleted or removed comments. After 24 hours, the average comment had just over 8 upvotes, and the average number of replies was just over 0.5.
-
+In total, there were 401 deleted or removed comments. After 24 hours, the average comment had a score of just over 8, and the average number of replies was just over 0.5.
 ![image](https://i.imgur.com/p5cRaiA.png)
 
-Again, to see more complete data, check the [results.txt](data/monday-tuesday/results.txt) file.
+Again, to see more complete data, check the [`data/monday-tuesday/results.txt`](data/monday-tuesday/results.txt) file.
 
 ### Final Data
-More to come soon
+The full results are available in [`data/saturday-sunday/results.txt`](data/saturday-sunday/results.txt), but I will go over the basics here.
+
+Again, as with the monday-tuesday results, most of the comments (by a wide margin), came from [r/AskReddit](https://www.reddit.com/r/AskReddit/). See the chart below to see other top subreddits.
+![image](https://i.imgur.com/Dh2nMOQ.png)
+
+This time around, I collected comments from 2818 subreddits, a number very similar to the previous 2795.
+
+The oldest account I collected was made on September 13th, 2005, while the average account I collected data from was made on November 6th, 2015. The average account had 165 total karma.
+
+In total, there were 399 deleted or removed comments. After 24 hours, the average comment had a score of just over 9, and the average number of replies was just over .5.
+![image](https://i.imgur.com/emmRoOH.png)
+
+Again, to see more complete data, check the [`data/saturday-sunday/results.txt`](data/saturday-sunday/results.txt) file.
 
 ### Overall Conclusions
 More to come soon
