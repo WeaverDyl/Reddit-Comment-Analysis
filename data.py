@@ -226,7 +226,7 @@ def deleted_comments_data(arr_initial, arr_final):
 
 def print_data_to_file(arr_initial, arr_final):
     """ """
-    results_file = open('', 'w')
+    results_file = open('data/results.txt', 'w')
     
     # Returns sorted dictionaries of format ('subreddit' : num comments)
     subreddit_stats = subreddit_data(arr_initial)
@@ -330,9 +330,9 @@ def deleted_comments_chart(arr_initial, arr_final):
     plt.show()
 
 if __name__ == '__main__':
-    initial_file = open('', 'a+', encoding='utf-8') # Store initial comment info
+    initial_file = open('data/initial.csv', 'a+', encoding='utf-8') # Store initial comment info
     initial_file.seek(0) # Move file pointer to beginning
-    final_file = open('', 'a+', encoding='utf-8') # Store final comment info
+    final_file = open('data/final.csv', 'a+', encoding='utf-8') # Store final comment info
     final_file.seek(0) # Move file pointer to beginning
 
     initial_objs = create_initial_comment_objects() # get Initial Comment objects

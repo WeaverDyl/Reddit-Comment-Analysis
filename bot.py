@@ -4,9 +4,9 @@ import time
 import codecs
 import re
 
-initial_file = open('', 'a+', encoding='utf-8') # Where to store initial comment info
+initial_file = open('data/initial.csv', 'a+', encoding='utf-8') # Where to store initial comment info
 initial_file.seek(0) # Move file pointer to beginning
-final_file = open('', 'a+', encoding='utf-8') # Where to store final comment info
+final_file = open('data/final.csv', 'a+', encoding='utf-8') # Where to store final comment info
 final_file.seek(0) # Move file pointer to beginning
 
 comment_num = 1 # Used to represent the current comment being looked at (for run_initial)
@@ -28,6 +28,7 @@ def run_initial(r):
     "initial_file". Skip any comments with issues
     """
     global comment_num
+    print("RUNNING INITIAL")
     print("-------------------------- AWAKE -------------------------------")
     while comment_num < COMMENTS_TO_GET:
         for comment in r.subreddit('all').comments(limit=25):
@@ -51,7 +52,7 @@ def run_initial(r):
         initial_file.flush()
         time.sleep(5)
     # If we finish early, just return
-    print("done")
+    print("INITIAL DONE")
     return
 
 
@@ -74,9 +75,9 @@ def run_final(r):
     as possible, and fill the rest with placeholder info
     """
     global comment_num
+    print("RUNNING FINAL")
     ids = get_ids() # Get all of the initial comment ids
     for comment_id in ids:
-
         # Get the comment based on its id
         comment = r.comment(id=comment_id)
         try:
@@ -93,10 +94,12 @@ def run_final(r):
             print(str(e))
             # If an exception occurs, the comment was probably deleted. We know the comment
             # number and the id, so print those. Assume a score of 0
-            final_file.write(f"{comment_num},0,0,0,Deleted/Removed,Deleted/Removed," +
+            final_file.write(f"{comment_num},Deleted/Removed,Deleted/Removed,0,Deleted/Removed,Deleted/Removed," +
                              f"{comment.id},Deleted/Removed\n")
             print(comment_num)
             comment_num += 1 # Just so the user knows the current progress
+    print("FINAL DONE")
+    return
 
 if __name__ == "__main__":
     r = login()
