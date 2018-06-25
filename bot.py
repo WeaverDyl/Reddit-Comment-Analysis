@@ -103,5 +103,5 @@ def run_final(r):
 
 if __name__ == "__main__":
     r = login()
-    #run_initial(r) # Comment out if getting final data
-    run_final(r) # Comment out if getting initial data
+    run_initial(r) # Comment out if getting final data
+    #run_final(r) # Comment out if getting initial data
