@@ -55,7 +55,19 @@ In total, there were 399 deleted or removed comments. After 24 hours, the averag
 Again, to see more complete data, check the [`data/saturday-sunday/results.txt`](data/saturday-sunday/results.txt) file.
 
 ### Overall Conclusions
-More to come soon
+After looking at the results, I would like to do multiple, longer length runs of this project. I am planning on doing multiple week long experiments and comparing those results. When I do these, I will attach the results to a new `README`, and hopefully the results will be a little more interesting.
+
+One thing I noticed from the data is the popularity of certain subreddits during/after certain events have happened. There are examples of this in both the initial and final data sets, actually. 
+
+In the initial data set, which has comments from Monday, June 18th, [r/hiphopheads](https://www.reddit.com/r/hiphopheads/) was the third most popular subreddit in [r/all](https://www.reddit.com/r/all/) with regards to number of comments. This can be attributed to the [murder of popular rapper XXXTentacion](https://en.wikipedia.org/wiki/Murder_of_XXXTentacion).
+
+In the final data set, [r/soccer](https://www.reddit.com/r/soccer/) had the second most comments of any subreddit in [r/all](https://www.reddit.com/r/all/), and this can be attributed to the World Cup.
+
+Overall, the data was very similar (much more so than I expected. [r/AskReddit](https://www.reddit.com/r/AskReddit/) was the most popular subreddit in both data sets, but that's about the only similarity I expected. Of the comments that I collected, the average age of the accounts from both data sets differed by only months, and the oldest account from both sets differed by only TWO days.
+
+Everything else was very similar too. From the average account karma, to the average comment score after a day, to the average number of replies, I would have never expected all of these to be so close together.
+
+Ultimately, this deserves to be looked further into with more trials, each of a longer period. And that's what I plan to do, as I've mentioned.
 
 ## LICENSE
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
