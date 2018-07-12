@@ -50,6 +50,8 @@ The final file stores 8 data points for each comment. In order, these are:
 
 ## Findings
 
+### If you're interested, a week-long data collection was done, and you can read about the results [here](/WEEK_EXPERIMENT_RESULTS.md).
+
 ### Monday - Tuesday Data
 The full results are available in [`data/monday-tuesday/results.txt`](data/monday-tuesday/results.txt), but I will go over the basics here.
 
