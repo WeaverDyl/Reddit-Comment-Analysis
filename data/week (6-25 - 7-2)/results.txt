@@ -1,0 +1,162 @@
+FAST FACTS FROM DATA:
+	Subreddit Stats:
+		Most popular subreddit: 'AskReddit' with 10839 comments
+		Comments collected from 12301 subreddits total
+
+	Account Statistics:
+		Oldest account created on 07/26/2005
+		Average account created on 10/13/2015
+		Average overall (comment + post) karma gained: 729.9973388169832
+
+	Comment Data:
+		Average comment length: 167.60417 characters
+		Average comment score: 9.00506 points
+		Average number of comment replies: 0.5709710162458386
+		There were 9859 deleted or removed comments
+
+FULL(ER) STATS FROM DATA:
+	Oldest Accounts (From Collected Data):
+		'randallsquared' Created their account on: 07/26/2005
+		'Random' Created their account on: 07/28/2005
+		'Sampo' Created their account on: 07/28/2005
+		'EdwardCoffin' Created their account on: 08/22/2005
+		'mikaelhg' Created their account on: 09/22/2005
+		'simonjp' Created their account on: 09/26/2005
+		'cavedave' Created their account on: 09/30/2005
+		'pedrocr' Created their account on: 10/19/2005
+		'rechlin' Created their account on: 10/27/2005
+		'qweltor' Created their account on: 11/21/2005
+		'larsga' Created their account on: 11/21/2005
+		'aselbst' Created their account on: 11/22/2005
+		'quentinnuk' Created their account on: 11/23/2005
+		'aberant' Created their account on: 12/01/2005
+		'Taladar' Created their account on: 12/02/2005
+		'maxerickson' Created their account on: 12/05/2005
+		'mcherm' Created their account on: 12/08/2005
+		'llama-lime' Created their account on: 12/08/2005
+		'olifante' Created their account on: 12/09/2005
+		'mojuba' Created their account on: 12/10/2005
+		'shimon' Created their account on: 12/15/2005
+		'keithb' Created their account on: 12/18/2005
+		'fvf' Created their account on: 12/19/2005
+		'neilplatform1' Created their account on: 12/22/2005
+		'lacker' Created their account on: 12/25/2005
+		'flashman' Created their account on: 12/25/2005
+		'cyrano741' Created their account on: 12/28/2005
+		'Poromenos' Created their account on: 01/01/2006
+		'tooslow' Created their account on: 01/02/2006
+		'bobcat' Created their account on: 01/05/2006
+		'cpuetz' Created their account on: 01/07/2006
+		'Jonathan_the_Nerd' Created their account on: 01/10/2006
+		'Nwallins' Created their account on: 01/10/2006
+		'Iamthewalrus' Created their account on: 01/11/2006
+		'rcadestaint' Created their account on: 01/21/2006
+		'RSquared' Created their account on: 01/21/2006
+		'redalastor' Created their account on: 01/24/2006
+		'Shaper_pmp' Created their account on: 01/26/2006
+		'lucas' Created their account on: 01/30/2006
+		'generalbaguette' Created their account on: 01/31/2006
+		'rrl' Created their account on: 01/31/2006
+		'frickindeal' Created their account on: 02/06/2006
+		'Arve' Created their account on: 02/07/2006
+		'lordatlas' Created their account on: 02/16/2006
+		'psi-' Created their account on: 02/16/2006
+		'Jack9' Created their account on: 02/17/2006
+		'vosechu' Created their account on: 02/21/2006
+		'tekai' Created their account on: 02/22/2006
+		'3rdparty' Created their account on: 02/28/2006
+		'cwenham' Created their account on: 02/28/2006
+
+	Highest Overall Karma Gains (From Collected Data):
+		'Hdalby33' gained: 376785 overall karma
+		'TooShiftyForYou' gained: 276495 overall karma
+		'DisDudeForReal' gained: 112956 overall karma
+		'paolonoci' gained: 76257 overall karma
+		'Sariel007' gained: 71145 overall karma
+		'Loveinthemud' gained: 69454 overall karma
+		'larr2712' gained: 67604 overall karma
+		'CheetahSperm18' gained: 56858 overall karma
+		'RespectMyAuthoriteh' gained: 56616 overall karma
+		'RlzJohnnyM' gained: 55700 overall karma
+		'goofygoober2' gained: 53302 overall karma
+		'uglyorgan8038' gained: 53038 overall karma
+		'therecordcorrected' gained: 50745 overall karma
+		'MrPopoTFS' gained: 48657 overall karma
+		'slakmehl' gained: 47642 overall karma
+		'WiliamTheNoisy' gained: 46386 overall karma
+		'Lol33ta' gained: 46031 overall karma
+		'deathakissaway' gained: 45687 overall karma
+		'Komodina' gained: 44197 overall karma
+		'icant-chooseone' gained: 40738 overall karma
+		'LonzoDaVinci' gained: 40231 overall karma
+		'pp0787' gained: 40000 overall karma
+		'Solid_Snark' gained: 39417 overall karma
+		'relevantlife' gained: 37056 overall karma
+		'Cadet-Bone-Spurs' gained: 36788 overall karma
+
+	Highest Upvoted Comments (From Collected Data):
+		'TRIGMILLION' had a comment with: 26786 upvotes
+		'bupdup' had a comment with: 21816 upvotes
+		'MilitaryFish' had a comment with: 12880 upvotes
+		'russianout' had a comment with: 10683 upvotes
+		'm1a1tanksauce' had a comment with: 8968 upvotes
+		'duermando' had a comment with: 8934 upvotes
+		'headwrong' had a comment with: 7757 upvotes
+		'Adrenilln' had a comment with: 7570 upvotes
+		'-Rasputin-' had a comment with: 7224 upvotes
+		'throwcap' had a comment with: 7175 upvotes
+		'TheRic0Suave' had a comment with: 6190 upvotes
+		'PM__ME__YOUR__RANTS' had a comment with: 6130 upvotes
+		'SpikeandMike' had a comment with: 5733 upvotes
+		'SouthSouthLondon' had a comment with: 5485 upvotes
+		'Frogman417' had a comment with: 5071 upvotes
+		'ES_MattP' had a comment with: 4992 upvotes
+		'Ohnoitsewan' had a comment with: 4934 upvotes
+		'smcclafferty' had a comment with: 4517 upvotes
+		'Happydays352redhead' had a comment with: 4460 upvotes
+		'thirdangletheory' had a comment with: 4434 upvotes
+		'Derpsteenie' had a comment with: 4212 upvotes
+		'kidjay76' had a comment with: 4208 upvotes
+		'Semi-Empathetic' had a comment with: 4127 upvotes
+		'birbolover' had a comment with: 4086 upvotes
+		'bleucheesyboi' had a comment with: 3975 upvotes
+
+	Most Commented Subreddits (From Collected Data):
+		'AskReddit' had 10839 comments
+		'politics' had 4136 comments
+		'nba' had 4043 comments
+		'soccer' had 3898 comments
+		'FortNiteBR' had 2828 comments
+		'The_Donald' had 2087 comments
+		'worldnews' had 1807 comments
+		'news' had 1681 comments
+		'funny' had 1602 comments
+		'pics' had 1478 comments
+		'AskOuija' had 1293 comments
+		'gaming' had 1164 comments
+		'leagueoflegends' had 1093 comments
+		'Ice_Poseidon' had 980 comments
+		'todayilearned' had 875 comments
+		'Overwatch' had 840 comments
+		'gonewild' had 811 comments
+		'hockey' had 801 comments
+		'videos' had 775 comments
+		'Showerthoughts' had 748 comments
+		'dankmemes' had 735 comments
+		'SquaredCircle' had 725 comments
+		'teenagersnew' had 722 comments
+		'aww' had 688 comments
+		'hiphopheads' had 678 comments
+
+	Subreddits With Most Deleted Comments (From Collected Data):
+		'AskReddit' had 507 deleted comments
+		'soccer' had 277 deleted comments
+		'nba' had 258 deleted comments
+		'politics' had 244 deleted comments
+		'worldnews' had 148 deleted comments
+		'news' had 144 deleted comments
+		'FortNiteBR' had 131 deleted comments
+		'AskOuija' had 128 deleted comments
+		'The_Donald' had 117 deleted comments
+		'funny' had 101 deleted comments
+

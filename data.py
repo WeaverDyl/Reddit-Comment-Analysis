@@ -330,7 +330,7 @@ def deleted_comments_chart(arr_initial, arr_final):
     plt.show()
 
 if __name__ == '__main__':
-    initial_file = open('data/initial.csv', 'a+', encoding='utf-8') # Store initial comment info
+    initial_file = open('data/final.csv', 'a+', encoding='utf-8') # Store initial comment info
     initial_file.seek(0) # Move file pointer to beginning
     final_file = open('data/final.csv', 'a+', encoding='utf-8') # Store final comment info
     final_file.seek(0) # Move file pointer to beginning

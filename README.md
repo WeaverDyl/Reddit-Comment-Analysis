@@ -1,7 +1,7 @@
 # Reddit Comment Analysis
 
 ## About
-This was much more of a curiosity project than anything else. I wanted to learn some more Python, as I haven't used the language for much in the past. I figured Python is the perfect language to write a Reddit bot in (because of [PRAW](https://praw.readthedocs.io/en/latest/), of course. I didn't want to make a bot that replies to comments (those are super annoying and overdone at this point), so I had to think of something else. I settled on a data collection bot that I can use to compile statistics based on comment patterns. It's not complicated (code-wise), but I made it in hoped that the results would be interesting.
+This was much more of a curiosity project than anything else. I wanted to learn some more Python, as I haven't used the language for much in the past. I figured Python is the perfect language to write a Reddit bot in (because of [PRAW](https://praw.readthedocs.io/en/latest/)). I didn't want to make a bot that replies to comments (those are super annoying and overdone at this point), so I had to think of something else. I settled on a data collection bot that I can use to compile statistics based on comment patterns. It's not complicated (code-wise), but I made it in hoped that the results would be interesting.
 
 My idea was to collect a bunch of Reddit comments on one day of the week, and then to collect any changes to those comments a day later (account karma gains, how many comments were deleted, etc...) and then collect a different set of comment data on a different day of the week and then repeat the process.
 
@@ -22,9 +22,35 @@ In the middle of `data.py`, at the top of the `print_data_to_file` method, add a
 
 Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py` with the `run_initial(r)` method uncommented, and the `run_final(r)` method commented out. Once you have your data, run `bot.py` again with `run_initial(r)` commented out and `run_final(r)` uncommented. These method calls are made in `main`.
 
+### Data File Format
+The initial and final data file layouts each differ, so I'll explain how they're both laid out.
+#### Initial File
+The initial file stores 8 data points for each comment. In order, these are:
+
+1. The number comment we're collecting. Should match the line number of the document. (If we've collected 5000 comments, the next comment will have comment number 5001).
+2. The comment author's Reddit username
+3. The comment author's account creation time (in seconds since epoch). When printing to a results file, this time is converted to UTC time using the `strftime` method of the `time` module.
+4. The comment author's total karma. The 'total' karma is calculated by adding the author's comment and post karma together
+5. The subreddit that the comment came from (we're collecting comments from [/r/all](https://www.reddit.com/r/all/) which a very large number of subreddits are a part of)
+6. The permalink to the comment **(this isn't explicitly used anywhere, so feel free to remove it)**
+7. The ID of the comment. This is used to collect data on the comments after they were initially collected (for the final phase)
+8. The length of the comment
+
+#### Final File
+The final file stores 8 data points for each comment. In order, these are:
+
+1. The number comment we're collecting. Should match the line number of the document. (If we've collected 5000 comments, the next comment will have comment number 5001).
+2. The comment author's Reddit username
+3. The comment author's account creation time (in seconds since epoch). When printing to a results file, this time is converted to UTC time using the `strftime` method of the `time` module.
+4. The comment score, which is correlated with the number of upvotes and downvotes a comment receives.
+5. The number of 'top level' (for lack of a better term) replies. By 'top-level' I mean only the initial replies to a comment. If a comment receives one reply, and then somebody replies to that reply, then the initial comment only has one reply.
+6. The permalink to the comment **(this isn't explicitly used anywhere, so feel free to remove it)**
+7. The ID of the comment. This is used to collect data on the comments after they were initially collected (for the final phase)
+8. The length of the comment
+
 ## Findings
 
-### Initial Data
+### Monday - Tuesday Data
 The full results are available in [`data/monday-tuesday/results.txt`](data/monday-tuesday/results.txt), but I will go over the basics here.
 
 Relatively unsurprisingly, of the 10,000 comments I collected, the most, 517, in fact, came from [r/AskReddit](https://www.reddit.com/r/AskReddit/). See the chart below to see other top subreddits from my data.
@@ -39,7 +65,7 @@ In total, there were 401 deleted or removed comments. After 24 hours, the averag
 
 Again, to see more complete data, check the [`data/monday-tuesday/results.txt`](data/monday-tuesday/results.txt) file.
 
-### Final Data
+### Saturday - Sunday Data
 The full results are available in [`data/saturday-sunday/results.txt`](data/saturday-sunday/results.txt), but I will go over the basics here.
 
 Again, as with the monday-tuesday results, most of the comments (by a wide margin), came from [r/AskReddit](https://www.reddit.com/r/AskReddit/). See the chart below to see other top subreddits.
