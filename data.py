@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from collections import Counter, defaultdict
 
 class Inital_Comment(object):
-    """Makes generating statistics about comments easier"""
+    """Makes generating statistics about comments easier."""
     def __init__(self, comment_number, comment_author, account_creation_time, 
                  account_karma, comment_subreddit, comment_permalink, 
                  comment_id, comment_length):
@@ -18,7 +18,7 @@ class Inital_Comment(object):
         self.comment_length = comment_length
 
 class Final_Comment(object):
-    """Makes generating statistics about comments easier"""
+    """Makes generating statistics about comments easier."""
     def __init__(self, comment_number, comment_author, account_karma, 
                  comment_score, comment_num_replies, comment_permalink,
                  comment_id, comment_length):
@@ -32,11 +32,11 @@ class Final_Comment(object):
         self.comment_length = comment_length
 
 def create_initial_comment_objects():
-    """ Goes through the initial comments and returns an array 
-        of objects """
+    """Goes through the initial comments and returns an array 
+    of objects."""
     arr = [] # Stores objects
     for line in initial_file:
-        row = line.split(",")
+        row = line.split(",") # Get each
         
         # Set object variables for each object before adding it to the array
         comment_number, comment_author, account_creation_time, account_karma, \
@@ -52,8 +52,8 @@ def create_initial_comment_objects():
 
 
 def create_final_comment_objects():
-    """ Goes through the final comments and returns an array 
-        of objects """
+    """Goes through the final comments and returns an array 
+    of objects."""
     arr = [] # Stores objects
     for line in final_file:
         row = line.split(",")
@@ -70,8 +70,8 @@ def create_final_comment_objects():
     return arr
 
 def get_deleted_comments(arr_final):
-    """ Takes a list of (final) Comment objects and 
-        returns a list of deleted comment ID's """
+    """Takes a list of (final) Comment objects and 
+    returns a list of deleted comment ID's."""
     deleted_comments = []
 
     # Get the ID's of deleted comments
@@ -82,9 +82,8 @@ def get_deleted_comments(arr_final):
     return deleted_comments
 
 def subreddit_data(arr_initial):
-    """ Takes in initial comment data and returns a dictionary sorted
-        in descending order by number of comments made in each subreddit
-    """
+    """Takes in initial comment data and returns a dictionary sorted
+    in descending order by number of comments made in each subreddit."""
     # Stores subreddits and number of comments made in them
     comments_per_subreddit = defaultdict(int)
     # Go through each comment, increment value of subreddit it was posted in
@@ -97,10 +96,9 @@ def subreddit_data(arr_initial):
     return sorted_by_comments
 
 def account_age_data(arr_initial):
-    """ Takes in initial comment data and returns a tuple
-        of the oldest account creation date as well as the
-        average account creation date (both in unix time)
-    """
+    """Takes in initial comment data and returns a tuple
+    of the oldest account creation date as well as the average 
+    account creation date (both in unix time)."""
     oldest_account_age = int(time.time()) # Assume oldest account created now
     all_account_ages = defaultdict(int)
     total_account_age = 0 # Stores sum of all account creation times (unix time)
@@ -123,9 +121,9 @@ def account_age_data(arr_initial):
     return (oldest_account_age, average_creation, sorted_account_ages)
 
 def overall_karma_gain_data(arr_initial, arr_final):
-    """ Takes in starting and final comment data and returns
-        the average overall author karma gain in the time
-        between the data collections """
+    """Takes in starting and final comment data and returns
+    the average overall author karma gain in the time between 
+    the data collections."""
     total_start_karma = 0 # Total overall karma in initial data
     total_final_karma = 0 # Total overall karma in final data
     deleted_comments = get_deleted_comments(arr_final)
@@ -157,8 +155,7 @@ def overall_karma_gain_data(arr_initial, arr_final):
 
 def average_comment_length(arr_initial):
     """ Takes in initial comment data and returns the
-        average length (in characters) of the comments
-    """
+    average length (in characters) of the comments."""
     total_length = 0 # Sum of all comment lengths
     data_points = len(arr_initial) # Number of comments collected
 
@@ -170,10 +167,9 @@ def average_comment_length(arr_initial):
     return average_length
 
 def score_gain_data(arr_final):
-    """ Takes in final comment data and returns a dict
-        containing every user's comment score gains and 
-        the average comment score since the initial data
-        was taken """
+    """Takes in final comment data and returns a dict containing every 
+    user's comment score gains and the average comment score since the 
+    initial data was taken."""
     total_gain = 0 # Sum of all comment scores
     data_points = len(arr_final) # Number of comments (incl. deleted (= 0))
     all_score_gains = defaultdict(int)
@@ -189,9 +185,8 @@ def score_gain_data(arr_final):
     return (average_gain, sorted_score_gains)
 
 def average_number_replies(arr_final):
-    """ Takes in final comment data and returns the
-        average number of "top-level" replies of the
-        comments """
+    """Takes in final comment data and returns the average number of 
+    "top-level" replies of the comments."""
     total_replies = 0 # Sum of all replies
     deleted_comments = get_deleted_comments(arr_final) # Get ID of deleted comments
     data_points = len(arr_final) - len(deleted_comments) # All non-deleted comments
@@ -205,9 +200,9 @@ def average_number_replies(arr_final):
     return average_replies
 
 def deleted_comments_data(arr_initial, arr_final):
-    """ Takes in initial and final comment data and returns a dictionary
-        Where the keys are the subreddits where comments were collected
-        and the values are the number of deleted comments in that subreddit """
+    """Takes in initial and final comment data and returns a dictionary
+    Where the keys are the subreddits where comments were collected
+    and the values are the number of deleted comments in that subreddit."""
     deleted_comments = get_deleted_comments(arr_final)
     # Stores number of comments deleted per subreddit
     deleted_comments_subreddits = defaultdict(int)
@@ -225,7 +220,8 @@ def deleted_comments_data(arr_initial, arr_final):
     return (deleted_comments, sorted_deleted_subreddits)
 
 def print_data_to_file(arr_initial, arr_final):
-    """ """
+    """Prints a bunch of raw data to a file, as well as some compiled
+    statistics."""
     results_file = open('data/results.txt', 'w')
     
     # Returns sorted dictionaries of format ('subreddit' : num comments)
@@ -294,6 +290,7 @@ def print_data_to_file(arr_initial, arr_final):
     results_file.write('\n')
 
 def subreddit_comments_chart(arr_initial, arr_final):
+    """Generates a chart based on which subreddits had the most comments."""
     subreddit_info = subreddit_data(arr_initial)
     
     # Show plot of subreddits with the most comments
@@ -312,6 +309,8 @@ def subreddit_comments_chart(arr_initial, arr_final):
     plt.show()
 
 def deleted_comments_chart(arr_initial, arr_final):
+    """Generates a chart based on which subreddits had the most deleted
+    comments."""
     deleted_comments_info = deleted_comments_data(arr_initial, arr_final)
     
     # Show plot of subreddits with the most comments

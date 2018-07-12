@@ -16,7 +16,7 @@ The only outside libraries you'll need to run this project yourself are [PRAW](h
 
 Then you need to setup a script application on Reddit, and enter the login information in the `config.py` file. See instructions [here](https://praw.readthedocs.io/en/latest/getting_started/authentication.html). 
 
-At the top of `bot.py`, add the relative path to your initial file and final file locations. `bot.py` should then run without issue.
+At the top of `bot.py`, add the relative path to your initial file and final file locations. If collecting initial data, then change  the value of `COMMENTS_TO_GET` to the number of comments you want to collect. `bot.py` should then run without issue.
 
 In the middle of `data.py`, at the top of the `print_data_to_file` method, add a location where you would like some statistics printed. Then, at the bottom of `data.py`, in `main`, add the relative path to your initial file and final file locations. `data.py` should then run without issue.
 

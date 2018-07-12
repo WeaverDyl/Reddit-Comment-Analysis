@@ -10,9 +10,9 @@ final_file = open('data/final.csv', 'a+', encoding='utf-8') # Where to store fin
 final_file.seek(0) # Move file pointer to beginning
 
 comment_num = 1 # Used to represent the current comment being looked at (for run_initial)
-COMMENTS_TO_GET = 10000 # How many comments we want total
 
 def login():
+    """Logs in to Reddit through PRAW so data collection can start."""
     r = praw.Reddit(username = config.username, 
                     password = config.password,
                     client_id = config.client_id,
@@ -23,10 +23,9 @@ def login():
     
 # INITIAL
 def run_initial(r):
-    """
-    Takes a Reddit instance and prints a bunch of useful information to
-    "initial_file". Skip any comments with issues
-    """
+    """Takes a Reddit instance and prints a bunch of useful information to
+    "initial_file". Skip any comments with issues."""
+    COMMENTS_TO_GET = 10000 # How many comments we want total
     global comment_num
     print("RUNNING INITIAL")
     print("-------------------------- AWAKE -------------------------------")
@@ -58,10 +57,8 @@ def run_initial(r):
 
 # FINAL
 def get_ids():
-    """
-    Gets all of the comment ids from the initial file so
-    the program can get the same comment information later
-    """
+    """Gets all of the comment ids from the initial file so
+    the program can get the same comment information later."""
     ids = []
     for line in initial_file.readlines():
         row = line.split(',')
@@ -69,11 +66,9 @@ def get_ids():
     return ids
 
 def run_final(r):
-    """
-    Takes a Reddit instance and prints a bunch of useful information to
+    """Takes a Reddit instance and prints a bunch of useful information to
     "final_file". If the comment was deleted, print as much information
-    as possible, and fill the rest with placeholder info
-    """
+    as possible, and fill the rest with placeholder info."""
     global comment_num
     print("RUNNING FINAL")
     ids = get_ids() # Get all of the initial comment ids
