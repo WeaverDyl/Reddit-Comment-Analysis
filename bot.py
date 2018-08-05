@@ -1,5 +1,4 @@
 import praw
-import config
 import time
 import codecs
 import re
@@ -11,18 +10,13 @@ final_file.seek(0) # Move file pointer to beginning
 
 comment_num = 1 # Used to represent the current comment being looked at (for run_initial)
 
-def login():
+def authenticate():
     """Logs in to Reddit through PRAW so data collection can start."""
-    r = praw.Reddit(username = config.username, 
-                    password = config.password,
-                    client_id = config.client_id,
-                    client_secret = config.client_secret,
-                    user_agent = config.user_agent)
-    return r
-    
+    reddit = praw.Reddit('datacollector', user_agent="ENTER A USER AGENT HERE")
+    return reddit
     
 # INITIAL
-def run_initial(r):
+def run_initial(reddit):
     """Takes a Reddit instance and prints a bunch of useful information to
     "initial_file". Skip any comments with issues."""
     COMMENTS_TO_GET = 10000 # How many comments we want total
@@ -30,14 +24,14 @@ def run_initial(r):
     print("RUNNING INITIAL")
     print("-------------------------- AWAKE -------------------------------")
     while comment_num < COMMENTS_TO_GET:
-        for comment in r.subreddit('all').comments(limit=25):
+        for comment in reddit.subreddit('all').comments(limit=25):
             # Ensure we're only getting the number of comments the user wants
             # while comment_num <= COMMENTS_TO_GET:
             try:
                 # Write the information to the initial file
                 initial_file.write(f"{comment_num},{comment.author.name}," + 
-                                    f"{str(int(r.redditor(comment.author.name).created_utc))}," + 
-                                    f"{str(r.redditor(comment.author.name).link_karma + r.redditor(comment.author.name).comment_karma)}," + 
+                                    f"{str(int(reddit.redditor(comment.author.name).created_utc))}," + 
+                                    f"{str(reddit.redditor(comment.author.name).link_karma + reddit.redditor(comment.author.name).comment_karma)}," + 
                                     f"{comment.subreddit.display_name},{comment.permalink}," + 
                                     f"{comment.id},{len(comment.body)}\n")
                 print(comment_num) # Just so the user knows the current progress
@@ -65,7 +59,7 @@ def get_ids():
         ids.append(row[6]) # ID's are the 7th element (index 6)
     return ids
 
-def run_final(r):
+def run_final(reddit):
     """Takes a Reddit instance and prints a bunch of useful information to
     "final_file". If the comment was deleted, print as much information
     as possible, and fill the rest with placeholder info."""
@@ -74,13 +68,13 @@ def run_final(r):
     ids = get_ids() # Get all of the initial comment ids
     for comment_id in ids:
         # Get the comment based on its id
-        comment = r.comment(id=comment_id)
+        comment = reddit.comment(id=comment_id)
         try:
             comment.refresh() # Refresh the comment (fixes # of replies)
             # Write all of the information needed
             final_file.write(f"{comment_num}," +
                              f"{comment.author.name}," +
-                             f"{str(r.redditor(comment.author.name).link_karma + r.redditor(comment.author.name).comment_karma)}," +
+                             f"{str(reddit.redditor(comment.author.name).link_karma + reddit.redditor(comment.author.name).comment_karma)}," +
                              f"{comment.score},{len(comment.replies)},{comment.permalink}," +
                              f"{comment.id},{len(comment.body)}\n")
             print(comment_num) # Just so the user knows the current progress
@@ -97,6 +91,6 @@ def run_final(r):
     return
 
 if __name__ == "__main__":
-    r = login()
-    run_initial(r) # Comment out if getting final data
-    #run_final(r) # Comment out if getting initial data
+    reddit = authenticate()
+    run_initial(reddit) # Comment out if getting final data
+    #run_final(reddit) # Comment out if getting initial data
