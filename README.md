@@ -14,13 +14,13 @@ In the future, I'd like to do a longer experiment, perhaps a week or two between
 ## Setup
 The only outside libraries you'll need to run this project yourself are [PRAW](https://praw.readthedocs.io/en/latest/), and [Matplotlib](https://matplotlib.org/). Both are available via pip.
 
-Then you need to setup a script application on Reddit, and enter the login information in the `config.py` file. See instructions [here](https://praw.readthedocs.io/en/latest/getting_started/authentication.html). 
+Then you need to setup a script application on Reddit, and enter the login information in the `praw.ini` file. See instructions [here](https://praw.readthedocs.io/en/latest/getting_started/authentication.html). You also need to change the default user agent in the `authenticate` function of `bot.py`.
 
 At the top of `bot.py`, add the relative path to your initial file and final file locations. If collecting initial data, then change  the value of `COMMENTS_TO_GET` to the number of comments you want to collect. `bot.py` should then run without issue.
 
 In the middle of `data.py`, at the top of the `print_data_to_file` method, add a location where you would like some statistics printed. Then, at the bottom of `data.py`, in `main`, add the relative path to your initial file and final file locations. `data.py` should then run without issue.
 
-Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py` with the `run_initial(r)` method uncommented, and the `run_final(r)` method commented out. Once you have your data, run `bot.py` again with `run_initial(r)` commented out and `run_final(r)` uncommented. These method calls are made in `main`.
+Once those are setup, you're ready to collect data. You can set the subreddit as well as the number of comments you'd like to collect within `bot.py` Then, simply run `python bot.py` with the `run_initial(reddit)` method uncommented, and the `run_final(reddit)` method commented out. Once you have your data, run `bot.py` again with `run_initial(reddit)` commented out and `run_final(reddit)` uncommented. These method calls are made in `main`.
 
 ### Data File Format
 The initial and final data file layouts each differ, so I'll explain how they're both laid out.
